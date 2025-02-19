@@ -1,0 +1,9 @@
+Router>enable
+
+Router#conf t
+
+Router(config)#hostname MainRouter
+MainRouter(config)#int gigabitEthernet 0/0/0
+MainRouter(config-if)#description Vlan-Switch
+MainRouter(config-if)#no ip address
+MainRouter(config-if)#no shutdown 
