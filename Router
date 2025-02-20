@@ -7,3 +7,33 @@ MainRouter(config)#int gigabitEthernet 0/0/0
 MainRouter(config-if)#description Vlan-Switch
 MainRouter(config-if)#no ip address
 MainRouter(config-if)#no shutdown 
+
+MainRouter(config)#int gigabitEthernet 0/0/0.2
+MainRouter(config-subif)#encapsulation dot1Q 2
+MainRouter(config-subif)#ip address 192.168.0.25 255.255.255.248
+MainRouter(config-subif)#ip helper-address 192.168.0.40
+MainRouter(config-subif)#no shut
+MainRouter(config-subif)#exit
+
+MainRouter(config)#int gigabitEthernet 0/0/0.3
+MainRouter(config-subif)#encapsulation dot1Q 3
+MainRouter(config-subif)#ip address 192.168.0.1 255.255.255.240
+MainRouter(config-subif)#ip helper-address 192.168.0.40
+MainRouter(config-subif)#no shut
+MainRouter(config-subif)#exit
+
+MainRouter(config)#int gigabitEthernet 0/0/0.4
+MainRouter(config-subif)#encapsulation dot1Q 4
+MainRouter(config-subif)#ip address 192.168.0.17 255.255.255.248
+MainRouter(config-subif)#ip helper-address 192.168.0.40
+MainRouter(config-subif)#no shu
+MainRouter(config-subif)#exit
+
+MainRouter(config)#int gigabitEthernet 0/0/0.5
+MainRouter(config-subif)#encapsulation dot1Q 5
+MainRouter(config-subif)#ip address 192.168.0.33 255.255.255.252
+MainRouter(config-subif)#ip helper-address 192.168.0.40
+MainRouter(config-subif)#no shutdown 
+MainRouter(config-subif)#exit
+
+MainRouter(config)#do wr
